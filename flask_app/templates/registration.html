@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootswatch -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='/css/bootstrap.min.css') }}"> -->
+    <!-- Font Links -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:ital@1&display=swap" rel="stylesheet"> -->
+    <title>Registration</title>
+</head>
+<body class="fixed-bg" style="background-image: url('/static/img/ivan-torres-MQUqbmszGGM-unsplash.jpg'); height: 20px;">
+    <!-- Page Container -->
+    <div class="col-12">
+        <!-- Banner -->
+        <div class="d-flex justify-content-between align-items-center p-3 bg-dark b_bottom">
+            <h1 class="proj_title">Pizza Palace</h1>
+            <a class="reg_and_log_links" href="/user_login">Already have an account? Login</a>
+        </div>
+        <!-- End of Banner -->
+        <!-- Form Container -->
+        <div class="col-md-6 mx-auto my-5 p-3 bg-dark rounded card_border">
+            <form class="d-flex flex-column" action="/register" method="POST">
+                <!-- Flash messages -->
+                {% with messages = get_flashed_messages(category_filter=['register']) %}     <!-- declare a variable called messages -->
+                    {% if messages %}                            <!-- check if there are any messages -->
+                        {% for message in messages %}            <!-- loop through the messages -->
+                            <p class="text-danger"><strong>{{message}}</strong></p>                   <!-- display each message in a paragraph tag -->
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <!-- End of Flash messages -->
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div>
+                        <label class="reg_and_log_labels" for="first_name">First Name</label>
+                        <input class="form-control" type="text" name="first_name">
+                    </div>
+                    <div>
+                        <label class="reg_and_log_labels" for="last_name">Last Name</label>
+                        <input class="form-control" type="text" name="last_name">
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label class="reg_and_log_labels" for="email">Email</label>
+                    <input class="form-control" type="text" name="email">
+                </div>
+                <div class="mb-2">
+                    <label class="reg_and_log_labels" for="address">Address</label>
+                    <input class="form-control" type="text" name="address">
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div>
+                        <label class="reg_and_log_labels" for="city">City</label>
+                        <input class="form-control" type="text" name="city">
+                    </div>
+                    <div>
+                        <label class="reg_and_log_labels" for="state">State</label>
+                        <select class="form-control" name="state">
+                            <option value=""></option>
+                            <option value="PA">CA</option>
+                            <option value="WV">FL</option>
+                            <option value="OH">OH</option>
+                            <option value="OH">WS</option>
+                            <option value="OH">CL</option>
+                            <option value="OH">IL</option>
+                            <option value="OH">KT</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label class="reg_and_log_labels" for="password">Password</label>
+                    <input class="form-control" type="password" name="password">
+                </div>
+                <div class="mb-2">
+                    <label class="reg_and_log_labels" for="confirm_password">Confirm</label>
+                    <input class="form-control" type="password" name="confirm_password">
+                </div>
+                <input class="sign_up_btn mt-2 p-2 rounded" type="submit" value="Sign Up">
+            </form>
+        </div>
+        <!-- End of Form Container -->
+    </div>
+    <!-- End of Page Container -->
+</body>
+</html>
