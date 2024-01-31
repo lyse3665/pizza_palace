@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootswatch -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='/css/bootstrap.min.css') }}"> -->
+    <!-- Font Links -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:ital@1&display=swap" rel="stylesheet"> -->
+    <title>Pizza Palace Homepage</title>
+</head>
+<body class="background">
+    <!-- Page Container -->
+    <div class="col-12">
+        <!-- Banner -->
+        <div class="d-flex justify-content-between align-items-center p-3 bg-dark b_bottom">
+            <h1 class="proj_title">Pizza Palace</h1>
+            <div>
+                <a class="navbar_links" href="#">Home</a>
+                <a class="navbar_links" href="/account">Account</a>
+                <a class="navbar_links" href="/order">Order</a>
+                <a class="navbar_links" href="/logout">Logout</a>
+            </div>
+        </div>
+        <!-- End of Banner -->
+        <h1 class="quick_opt text-center my-5">Quick Options</h1>
+        <div class="container">
+            <div class="row mx-2">
+                <div class="card bg-dark col-md mx-1 my-2">
+                    <p class="quick_opt_txt text-center mt-5">
+                        Fed up with the usual pizza options? Craft your unique pie by 
+                        choosing from a selection of crusts, cheeses, sauces, and toppings!
+                    </p>
+                    <a class="text-center navbar_links my-2" href="/craft_pizza">NEW ORDER</a>
+                </div>
+                <div class="card bg-dark col-md mx-1 my-2">
+                    <p class="quick_opt_txt text-center mt-5">
+                        Ready to go back to the classics, huh? We've got you sorted with 
+                        the convenience to reorder your favorites!
+                    </p>
+                    <a class="text-center navbar_links my-2" href="/craft_fav_pizza">RE-ORDER FAVORITE</a>
+                </div>
+                <div class="card bg-dark col-md mx-1 my-2">
+                    <p class="quick_opt_txt text-center mt-5">
+                        Feeling adventurous? Opt for "Surprise Me" and watch as
+                        we create a pizza with a random selection of crust, cheese, sauce, and toppings!
+                    </p>
+                    <a class="text-center navbar_links my-2" href="/craft_surprise_pizza">SURPRISE ME</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Page Container -->
+</body>
+</html>

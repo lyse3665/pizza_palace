@@ -38,9 +38,21 @@ class Favorite:
         return user_favorites
 
     # Classmethod for getting a user's favorite pizza.
+    # @classmethod
+    # def get_user_favortie(cls, data):
+    #     query = """SELECT * FROM favorites WHERE favorites.id = %(id)s AND order_id = %(order_id)s;"""
+    #     results = connectToMySQL(db).query_db(query, data)
+    #     print(results)
+    #     return cls(results[0])
+
+
     @classmethod
-    def get_user_favortie(cls, data):
-        query = """SELECT * FROM favorites WHERE favorites.id = %(id)s AND order_id = %(order_id)s;"""
+    def get_user_favorite(cls, data):
+        query = "SELECT * FROM favorites WHERE user_id = %(user_id)s;"
         results = connectToMySQL(db).query_db(query, data)
-        print(results)
-        return cls(results[0])
+
+        # Check if results exist and are not empty before accessing the first element
+        if results and isinstance(results, list) and len(results) > 0:
+            return cls(results[0])
+        else:
+            return None  # or handle the case where no results are found

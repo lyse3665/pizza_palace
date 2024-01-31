@@ -59,7 +59,7 @@ def craft_fav_pizza():
         'id': session['user_id']
     }
     favorite = models_favorite.Favorite.get_all_user_favorites(data)
-    user_favorite =Favorite.get_user_favortie(data)
+    user_favorite =models_favorite.Favorite.get_user_favortie(data)
     return render_template('reorder.html', user_favorite=user_favorite)
 
 # Route for rendering the Surprise Pizza page.
@@ -115,10 +115,7 @@ def register():
         "password": bcrypt.generate_password_hash(request.form['password']), # Function for generating the hash.
         "confirm_password": request.form['confirm_password']
     }
-    """We save the data to the database and are returned a user's id. We put
-    this user id into session because when we go back to the dashboard we want
-    to check if the user is in session and if they are not we redirect them.
-    This is how we keep our applications safe."""
+
     id = models_user.User.save_new_user(data)
     session['user_id'] = id
     return redirect('/homepage')

@@ -1,0 +1,108 @@
+/* CSS Reset */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Page body */
+.background {
+    /* Background image */
+    background-image: url('/static/img/ivan-torres-MQUqbmszGGM-unsplash.jpg');
+    /* Set a specified height, or the minimum height for the background image */
+    min-height: 500px;
+
+    /* Set background image to fixed (don't scroll along with the page) */
+    background-attachment: fixed;
+
+    /* Center the background image */
+    background-position: center;
+
+    /* Set the background image to no repeat */
+    background-repeat: no-repeat;
+
+    /* Scale the background image to be as large as possible */
+    background-size: cover;
+}
+
+/* Project Title */
+.proj_title {
+    color: antiquewhite;
+}
+
+/* Registration and Login Links */
+.reg_and_log_links {
+    font-size: 20px;
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+/* Registration and Login Labels */
+.reg_and_log_labels {
+    font-size: 20px;
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+/* Sign up button */
+.sign_up_btn {
+    color: antiquewhite;
+    background-color: lightslategray;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* Navbar Links */
+.navbar_links {
+    font-size: 25px;
+    text-decoration: none;
+    color: antiquewhite;
+    margin: 0px 10px 0px 10px;
+}
+
+/* Quick options subtitle */
+.quick_opt {
+    color: antiquewhite;
+}
+
+/* Quick option cards */
+div.card {
+    height: 300px;
+    width: 100%;
+    border: 1px solid antiquewhite;
+}
+
+/* Border bottom */
+.b_bottom {
+    border-bottom: 2px solid antiquewhite;
+}
+
+/* Quick option text */
+.quick_opt_txt {
+    font-size: 20px;
+    color: antiquewhite;
+}
+
+/* Fields Scroll Bar */
+.scrollbar::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-track
+{
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: antiquewhite;
+    border: 2px solid black;
+}
+/* End of Fields Scroll Bar */
+
+.card_border {
+    border: 2px solid antiquewhite;
+}
